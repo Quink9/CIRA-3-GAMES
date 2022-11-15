@@ -28,7 +28,6 @@
             width: 80%;
             border: 2px solid yellow;
             border-radius: 5px;
-            /* box-shadow: 10px 10px 8px 10px rgb(120, 221, 252); */
             box-shadow: 10px 10px 5px 5px rgb(48, 48, 46);
         }
         #left{
@@ -338,7 +337,7 @@
                             </div>
                             <br>
                             <div id="myPaypalLoginSuccessBox">
-                                <span id="myPaypalLoginSuccess">PayPal Login Success! Click on 'Pay Now' to confirm!</span>
+                                <span id="myPaypalLoginSuccess">PayPal login success! Click on 'Pay Now' to confirm!</span>
                             </div>
                             <br>
                         </div>
@@ -369,9 +368,11 @@
             var bb=document.getElementById("myPaypal");
             var ret;
             if(aa.style.display!="none"){
-                var ret3=validateCreditNumber();
-                var ret4=validateCreditCVV();
-                ret=ret1 && ret2 && ret3 && ret4;
+                var ret3=validateCreditName();
+                var ret4=validateCreditNumber();
+                var ret5=validateCreditExpiry();
+                var ret6=validateCreditCVV();
+                ret=ret1 && ret2 && ret3 && ret4 && ret5 &&ret6;
                 return ret;
             }
             if(bb.style.display!="none"){
@@ -432,6 +433,16 @@
                 alert("Device not supported!");
             }
         }
+        function validateCreditName(){
+            var credname=document.getElementById("myCreditName");
+            if(credname.value.length==0){
+                alert("Name On Credit Card can't be blank!")
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
         function validateCreditNumber(){
             var crednum=document.getElementById("myCreditNumber");
             if(crednum.value.length==12){
@@ -439,6 +450,23 @@
             }
             else{
                 alert("Credit Card Number must be of 12 digits!");
+                return false;
+            }
+        }
+        function validateCreditExpiry(){
+            var credmonth=document.getElementById("myCreditMonth");
+            var credyear=document.getElementById("myCreditYear");
+            if(credmonth.value=="none" || credyear.value=="none"){
+                if(credmonth.value=="none"){
+                    alert("Credit Card Expiry Month must be selected!");
+                }
+                if(credyear.value=="none"){
+                    alert("Credit Card Expiry Year must be selected!");
+                }
+                return false;
+            }
+            else{
+                return true;
             }
         }
         function validateCreditCVV(){
