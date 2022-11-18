@@ -15,15 +15,18 @@
             height: 100%;
             font-family: 'Montserrat', sans-serif;
         }
-        body{
+
+        body {
             height: 99%;
             background: linear-gradient(#9ec2fe, rgb(120, 120, 233), pink, #b90358);
         }
-        #upper{
+
+        #upper {
             height: 10%;
             width: 100%;
             margin-bottom: 1%;
         }
+
         #lower {
             display: flex;
             justify-content: center;
@@ -31,7 +34,7 @@
             height: 80%;
             width: 100%;
         }
-        
+
         #container {
             display: flex;
             flex-direction: row;
@@ -178,6 +181,7 @@
 
         #myInvalidDevice {
             display: none;
+            text-align: center;
         }
 
         @media only screen and (max-width: 700px) {
@@ -218,21 +222,29 @@
             #container {
                 display: none;
             }
-            #navbar{
+
+            #navbar {
                 display: none;
             }
+
             #myInvalidDevice {
                 display: block;
             }
+
+            /* #upper{
+                margin-bottom: 3%;
+            } */
         }
 
         @media only screen and (max-width: 300px) {
             #container {
                 display: none;
             }
-            #navbar{
+
+            #navbar {
                 display: none;
             }
+
             #myInvalidDevice {
                 display: block;
             }
@@ -337,8 +349,8 @@
         <div id="navbar">
             <span>
                 <ul class="menu-bar">
-                    <img src="https://drive.google.com/file/d/1ql64Az_TUmXqSvDPLebKHPAkBzUdUakI/view?usp=share_link"
-                        width="240px" height="35px" style="box-shadow: 0px 3px 20px 0px black; border-radius:25px">
+                    <img src="https://raw.githubusercontent.com/Quink9/CIRA-3-GAMES/main/logo.webp" width="240px"
+                        height="35px" style="box-shadow: 0px 3px 20px 0px black; border-radius:25px">
                     <li><a href="C:\HTML CODES\CIRA^3 Studios Revamped.html"
                             style="text-decoration:none; color:white">Home</a></li>
                     <li><a href="#" style="text-decoration:none; color:white">Categories</a></li>
@@ -415,7 +427,7 @@
                                     <p>Expiry Date</p>
                                 </div>
                                 <div class="myCreditDetails">
-                                    <input type="number" name="myCreditCVV" id="myCreditCVV" placeholder="1234">
+                                    <input type="number" name="myCreditCVV" id="myCreditCVV" placeholder="123">
                                     <p>CVV</p>
                                 </div>
                             </div>
@@ -458,27 +470,28 @@
         </div>
     </div>
 
-
     <script language="javascript">
         function validate() {
-            var ret1 = validateEmail();
-            var ret2 = validatePassword();
+            var ret1 = validateUserEmail();
+            var ret2 = validateUserPassword();
             var aa = document.getElementById("myCreditCard");
             var bb = document.getElementById("myPaypal");
             var ret;
             if (aa.style.display != "none") {
-                var ret3 = validateCreditNumber();
-                var ret4 = validateCreditCVV();
-                ret = ret1 && ret2 && ret3 && ret4;
+                var ret3 = validateCreditName()
+                var ret4 = validateCreditNumber();
+                var ret5 = validateCreditExpiry();
+                var ret6 = validateCreditCVV();
+                ret = ret1 && ret2 && ret3 && ret4 && ret5 && ret6;
                 return ret;
             }
             if (bb.style.display != "none") {
-                var ret5 = checkPaypalLogin();
-                ret = ret1 && ret2 && ret5;
+                var ret7 = checkPaypalLogin();
+                ret = ret1 && ret2 && ret7;
                 return ret;
             }
         }
-        function validateEmail() {
+        function validateUserEmail() {
             var email = document.getElementById("myEmail");
             if (email.value.length == 0) {
                 alert("User Email can't be blank!");
@@ -488,7 +501,7 @@
                 return true;
             }
         }
-        function validatePassword() {
+        function validateUserPassword() {
             var password = document.getElementById("myPassword");
             if (password.value.length > 10 || password.value.length == 0) {
                 if (password.value.length > 10) {
@@ -530,31 +543,63 @@
                 alert("Device not supported!");
             }
         }
+        function validateCreditName() {
+            var credname = document.getElementById("myCreditName");
+            if (credname.value.length == 0) {
+                alert("Name On Credit Card can't be blank!");
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
         function validateCreditNumber() {
             var crednum = document.getElementById("myCreditNumber");
-            if (crednum.value.length == 12) {
+            if (crednum.value.length == 16) {
                 return true;
             }
             else {
-                alert("Credit Card Number must be of 12 digits!");
+                alert("Credit Card Number must be of 16 digits!");
+                return false;
+            }
+        }
+        function validateCreditExpiry() {
+            var credmonth = document.getElementById("myCreditMonth");
+            var credyear = document.getElementById("myCreditYear");
+            if (credmonth.value == "none" || credyear.value == "none") {
+                if (credmonth.value == "none") {
+                    alert("Credit Card Expiry Month can't be blank!");
+                }
+                if (credyear.value == "none") {
+                    alert("Credit Card Expiry Year can't be blank!");
+                }
+                return false;
+            }
+            else {
+                return true;
             }
         }
         function validateCreditCVV() {
             var credcvv = document.getElementById("myCreditCVV");
-            if (credcvv.value.length == 4) {
+            if (credcvv.value.length == 3) {
                 return true;
             }
             else {
-                alert("Credit Card CVV must be of 4 digits!");
+                alert("Credit Card CVV must be of 3 digits!");
                 return false;
             }
         }
         function checkPaypalLogin() {
             var payemail = document.getElementById("myPaypalEmail");
             var paypass = document.getElementById("myPaypalPassword");
-            if (payemail.value.length == 0 || paypass.value.length == 0) {
-                if (payemail.value.length == 0) {
-                    alert("PayPal Email can't be blank!");
+            if (payemail.value.length == 0 || paypass.value.length == 0 || (payemail.value.includes("@") == false || payemail.value.endsWith("@") || payemail.value.startsWith("@"))) {
+                if (payemail.value.length == 0 || (payemail.value.includes("@") == false || payemail.value.endsWith("@") || payemail.value.startsWith("@"))) {
+                    if (payemail.value.length == 0) {
+                        alert("PayPal Email can't be blank!");
+                    }
+                    else if (payemail.value.includes("@") == false || payemail.value.endsWith("@") || payemail.value.startsWith("@")) {
+                        alert("Invalid PayPal Email!");
+                    }
                 }
                 if (paypass.value.length == 0) {
                     alert("PayPal Password can't be blank!");
