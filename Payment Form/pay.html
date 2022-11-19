@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment</title>
+    <title>Pay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
         }
 
         body {
-            height: 99%;
+            height: 100%;
             background: linear-gradient(#9ec2fe, rgb(120, 120, 233), pink, #b90358);
         }
 
@@ -230,10 +230,6 @@
             #myInvalidDevice {
                 display: block;
             }
-
-            /* #upper{
-                margin-bottom: 3%;
-            } */
         }
 
         @media only screen and (max-width: 300px) {
@@ -373,7 +369,7 @@
             <div id="right">
                 <h2>Payment Form</h2>
                 <div id="myForm">
-                    <form action="#" onsubmit="return validate()" method="post">
+                    <form action="paid.html" onsubmit="return validate()" method="post">
                         <div class="myFormFields">
                             <input type="email" name="myEmail" id="myEmail" class="myInputBox" autocomplete="off">
                             <p>User Email</p>
@@ -394,16 +390,16 @@
                             <div id="myCreditCard" class="myTabs">
                                 <br><br>
                                 <div class="myCreditDetails">
-                                    <input type="text" name="myCreditName" id="myCreditName">
+                                    <input type="text" name="myCreditName" id="myCreditName" autocomplete="off">
                                     <p>Name On Card</p>
                                 </div>
                                 <div class="myCreditDetails">
                                     <input type="number" name="myCreditNumber" id="myCreditNumber"
-                                        placeholder="xxxx xxxx xxxx xxxx">
+                                        placeholder="xxxx xxxx xxxx xxxx" autocomplete="off">
                                     <p>Card Number</p>
                                 </div>
                                 <div class="myCreditDetails">
-                                    <select name="myCreditMonth" id="myCreditMonth">
+                                    <select name="myCreditMonth" id="myCreditMonth" autocomplete="off">
                                         <option value="none" disabled hidden selected>MM</option>
                                         <option value="01">JAN</option>
                                         <option value="02">FEB</option>
@@ -418,7 +414,7 @@
                                         <option value="11">NOV</option>
                                         <option value="12">DEC</option>
                                     </select>
-                                    <select name="myCreditYear" id="myCreditYear">
+                                    <select name="myCreditYear" id="myCreditYear" autocomplete="off">
                                         <option value="none" disabled hidden selected>YYYY</option>
                                         <option value="23">2023</option>
                                         <option value="24">2024</option>
@@ -427,7 +423,7 @@
                                     <p>Expiry Date</p>
                                 </div>
                                 <div class="myCreditDetails">
-                                    <input type="number" name="myCreditCVV" id="myCreditCVV" placeholder="123">
+                                    <input type="number" name="myCreditCVV" id="myCreditCVV" placeholder="123" autocomplete="off">
                                     <p>CVV</p>
                                 </div>
                             </div>
@@ -470,7 +466,7 @@
         </div>
     </div>
 
-    <script language="javascript">
+    <script>
         function validate() {
             var ret1 = validateUserEmail();
             var ret2 = validateUserPassword();
