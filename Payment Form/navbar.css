@@ -37,6 +37,7 @@ body {
 	position: relative;
 	cursor: pointer;
 	white-space: nowrap;
+	border-radius: 25px;
 }
 
 .menu-bar li:before {
