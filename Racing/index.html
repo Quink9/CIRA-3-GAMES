@@ -8,15 +8,71 @@
     <title>Racing</title>
     <link rel="stylesheet" href="style.css">
 
-
+    <style>
+        .menu-bar 
+		{
+			border-radius: 25px;
+			height: 35px;
+			display: inline-flex;
+			background-color: rgba(185, 3, 88, 0.6);
+			-webkit-backdrop-filter: blur(10px);
+			backdrop-filter: blur(10px);  
+			align-items: center;
+			padding: 0px 0px 0px 0px;
+			margin: 30px 0 45px 273px;
+		}
+		.menu-bar li
+		{
+			list-style: none;
+			color: white;
+			font-family: sans-serif;
+			font-weight: bold;
+			padding: 12px 16px;
+			margin: 0 8px;
+			position: relative;
+			cursor: pointer;
+			white-space: nowrap;
+			border-radius: 25px;
+		}
+		.menu-bar li:before 
+		{
+			content: " ";
+			position: absolute;
+			top: 0;
+			left:0;
+			height:100%;
+			width: 100%;
+			z-index:-1;
+			transition: .25s;
+			border-radius: 25px;
+		}
+		.menu-bar li:hover 
+		{
+			color: black;
+			background: linear-gradient(to bottom, #de1641, #db4f6d);
+			box-shadow: 0px 3px 20px 0px black;
+			transform: scale(1.05);/*Change scale according to your screen size*/
+			transition: .25s;
+			border-radius: 25px;
+		}
+        </style>
 
 </head>
 
 <body>
-    <div class="logo"><img src="logo.png" style="height: 100px;"></div>
-    <br>
-    <br>
-    <br>
+
+
+    <ul class="menu-bar">
+        <img src="https://raw.githubusercontent.com/Quink9/CIRA-3-GAMES/main/logo.webp" width="240px" height="35px" style="box-shadow: 0px 3px 20px 0px black; border-radius:25px">
+        <li><a href="#CIRA^3 Studios Revamped.html" style="text-decoration:none; color:white">Home</a></li>
+        <!--/*file path to be updated*/-->
+        <li><a href="#" style="text-decoration:none; color:white">Categories</a></li>
+        <li><a href="#" style="text-decoration:none; color:white">Shop Now</a></li>
+        <li><a href="#" style="text-decoration:none; color:white">About Us</a></li>
+        <li><a href="#" style="text-decoration:none; color:white">Login</a></li>
+    </ul>
+    <br><br><br><br>
+
 
     <h1>Racing Games</h1>
     <br>
@@ -40,7 +96,7 @@
             Need for Speed: Most Wanted is an open world racing game developed by Criterion Games and published by
             Electronic Arts. </div><br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"><a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
     </div>
@@ -51,17 +107,17 @@
     <div class="card">
         <div class="img-area">
             <div class="inner-area">
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/1960201900_IGDB-272x380.jpg" alt="">
+                <img src="aspn.jpg" alt="">
             </div>
         </div>
 
-        <div class="name">Asphalt 9 Legends</div>
+        <div class="name">Asphalt Nitro</div>
         <div class="about">
-            Take control of luxury licensed cars and push them past their limits with Asphalt 9 Legends by Gameloft.
+            Take control of luxury licensed cars and push them past their limits with Asphalt Nitro Mobile by Gameloft.
         </div>
         <br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"><a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
     </div>
@@ -80,7 +136,7 @@
             Need for Speed: Underground 2 is a 2004 racing video game developed by EA Black Box and published by
             Electronic Arts. </div><br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"><a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
 
@@ -101,7 +157,7 @@
             Need for Speed: Undercover is a 2008 racing video game, and is the twelfth installment in the Need for Speed
             series. </div><br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"><a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
 
@@ -116,17 +172,17 @@
     <div class="card">
         <div class="img-area">
             <div class="inner-area">
-                <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/co3ofx.jpg" alt="">
+                <img src="froza.jpeg" alt="">
             </div>
         </div>
 
-        <div class="name">Forza Horizon 5</div>
+        <div class="name">Forza Horizon 4</div>
         <div class="about">
-            Forza Horizon 5 is a 2021 racing video game developed by Playground Games and published by Microsoft
-            Studios. It was released on Xbox Series X and Microsoft Windows.
+            Forza Horizon 4 is a 2018 racing video game developed by Playground Games and published by Microsoft
+            Studios. It was released on Xbox One and Microsoft Windows
         </div><br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"><a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
     </div>
@@ -136,16 +192,16 @@
     <div class="card">
         <div class="img-area">
             <div class="inner-area">
-                <img src="https://image.jeuxvideo.com/medias/164621/1646208629-6968-jaquette-avant.jpg" alt="">
+                <img src="motogp.png" alt="">
             </div>
         </div>
 
-        <div class="name">MotoGP 22</div>
+        <div class="name">MotoGP 19</div>
         <div class="about">
-            MotoGP™22 is a racing game developed and published by Milestone S.r.l. The game is an officially licensed
+            MotoGP™19 is a racing game developed and published by Milestone S.r.l. The game is an officially licensed
             partner of the Grand Prix motorcycle racing series. </div><br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"><a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
 
@@ -155,17 +211,17 @@
     <div class="card">
         <div class="img-area">
             <div class="inner-area">
-                <img src="https://upload.wikimedia.org/wikipedia/en/b/be/F1_22_cover_art.jpg" alt="">
+                <img src="f121.png" alt="">
             </div>
         </div>
 
-        <div class="name">F1 2022</div>
+        <div class="name">F1 2021</div>
         <div class="about">
-            F1 2022 is the official video game of the 2022 Formula One and Formula 2 Championships developed by
+            F1 2021 is the official video game of the 2021 Formula One and Formula 2 Championships developed by
             Codemasters and published by EA Sports.
         </div><br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"> <a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
     </div>
@@ -184,7 +240,7 @@
             released for Windows and PlayStation 4 in July 2015...
         </div><br><br>
         <div class="rup">$100<br>
-            <div class="buy">BUY NOW-></div>
+            <div class="buy"><a href="pay.html" style="text-decoration:none; color:chartreuse">BUY NOW-></a></div>
         </div>
 
     </div>
