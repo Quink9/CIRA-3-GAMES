@@ -48,7 +48,7 @@ body {
 	height: 100%;
 	width: 100%;
 	z-index: -1;
-	transition: .2s;
+	transition: .3s;
 	border-radius: 25px;
 }
 
@@ -57,6 +57,6 @@ body {
 	background: linear-gradient(to bottom, #de1641, #db4f6d);
 	box-shadow: 0px 3px 20px 0px black;
 	transform: scale(1.0);
-	transition: .2s;
+	transition: .3s;
 	border-radius: 25px;
 }
