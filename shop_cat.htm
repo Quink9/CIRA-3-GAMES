@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Category Page</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Rubik+Microbe&display=swap');
+html{
+  color:#DAA520
+}
+
+/* Nav Bar CSS Begins  */
+#navbar {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+#navbar span {
+	position: fixed;
+}
+
+.menu-bar {
+	border-radius: 25px;
+	height: 35px;
+	display: inline-flex;
+	background-color: rgba(185, 3, 88, 0.6);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	align-items: center;
+	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+}
+
+.menu-bar li {
+	list-style: none;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 12px 16px;
+	margin: 0 8px;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.menu-bar li:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	transition: .2s;
+	border-radius: 25px;
+}
+
+.menu-bar li:hover {
+	color: black;
+	background: linear-gradient(to bottom, #de1641, #db4f6d);
+	box-shadow: 0px 3px 20px 0px black;
+	transform: scale(1.0);
+	transition: .2s;
+	border-radius: 25px;
+}
+/* Nav Bar CSS Ends */
+
+.grid1 {
+            position: relative;
+            width: 450px;
+            margin: 1px;
+            padding: auto;
+        }
+
+        .grid1_img {
+            display: inline;
+            width: 100%;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+        div.cats1{
+            
+        }
+        div #navbar{
+            display: none;
+        }
+}   
+/* Main Grid */
+body{
+	height:100vh;
+    background: rgb(53, 8, 165);
+    background: radial-gradient(circle, rgba(68,86,246,1) 0%, rgba(16,129,112,1) 31%, rgba(72,10,119,1) 49%, rgba(40,18,221,1) 100%);
+    
+}
+.container{
+	height:80%;
+	display:flex;
+	grid-template-columns: auto ;
+	justify-content:center;
+	align-items:center;
+	flex-wrap: wrap;
+	/* margin-bottom:25%; */
+    column-gap: 50px;
+}
+h2{
+    text-align: center;
+    justify-content:center;
+}
+input[type=button]{
+            /* margin: 0% 40%; */
+            background: rgb(131,58,180);
+            background-image: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+            background-clip: text;
+            border: 0;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-text-fill-color: transparent;
+            width:100%;
+            
+            font-size: 28px;
+             }
+input[type=button]:hover{
+    background: rgb(203,54,119);
+    background: radial-gradient(circle, rgba(203,54,119,1) 0%, rgba(10,5,147,1) 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+
+}
+.ims img:hover{
+    border-radius: 40px;
+}
+
+
+    </style>
+  </head>
+    <body onscroll="hideNavbar()">
+    <div id="upper">
+      <div id="navbar">
+          <span style="position:fixed;">
+              <ul class="menu-bar">
+                  <img src="https://raw.githubusercontent.com/Quink9/CIRA-3-GAMES/main/logo.webp" width="240px"
+                      height="35px" style="box-shadow: 0px 3px 20px 0px black; border-radius:25px">
+                  <li><a href="C:\HTML CODES\CIRA^3 Studios Revamped.html"
+                          style="text-decoration:none; color:white">Home</a></li>
+                  <li><a href="#" style="text-decoration:none; color:white">Categories</a></li>
+                  <li><a href="#" style="text-decoration:none; color:white">Shop Now</a></li>
+                  <li><a href="#" style="text-decoration:none; color:white">About Us</a></li>
+                  <li><a href="#" style="text-decoration:none; color:white">Login</a></li>
+              </ul>
+          </span>
+      </div>
+  </div>
+  <h2 id="head" style="text-align: center;margin-top:45px; margin-bottom: 0;">Shop Category</h2>
+  
+    <div class="container">
+    <div class="cats1">
+        <span class="ims">
+            <img src="https://tinyurl.com/29upb8uf" alt="Action-Games" width="480px"></a>
+                <h2>Action</h2>
+        </span>
+        <span class="ims">
+            <img src="https://tinyurl.com/2xtw85hb" alt="RPG-Games" width="480px"></a>
+                <h2>RPG</h2>
+        </span>
+    </div>
+
+    <div class="cats2">
+        <span class="ims">
+            <img src="https://tinyurl.com/vcuwvv96" alt="Racing-Games" width="480px"></a>
+                <h2>Racing</h2>
+        </span>
+        <span class="ims">
+            <img src="https://tinyurl.com/2tv4ajbw" alt="OpenWorld-Games" width="480px"></a>
+                <h2>Open World</h2>
+                
+        </span>
+    </div>
+    
+</div>
+<input type="button" id="btn1" value="View More">
+<style>
+
+</style>
+    </body>
+    <script>
+        function hideNavbar()
+        {
+          // let nav = document.querySelector('div');
+          // let rect = elem.getBoundingClientRect();
+          // alert("Hi");
+            var nav=document.getElementById("navbar");
+            // var navv=nav.getBoundingClientRect().bottom;
+            var grid=document.getElementById("head");
+            var gridd=grid.getBoundingClientRect().top;
+            // alert(navv.bottom);
+            // alert(gridd.top)
+            if(gridd<=0)
+            {
+              // alert("Ho")
+                nav.style.display="none";
+                // nav.style.visibility="hidden";
+            }
+            else
+            {
+                nav.style.display="flex";
+                // nav.style.visibility="visible";
+            }
+        }
+    </script>
+</html>
