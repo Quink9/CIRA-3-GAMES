@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+html{
+  color:#DAA520
+}
+
+/* Nav Bar CSS Begins  */
+#navbar {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+summary:hover{
+    text-decoration: underline;
+    text-shadow: 1px 1px 1px 1px rgb(255, 255, 255);
+    font-size: 17px;
+}
+#navbar span {
+	position: fixed;
+}
+
+.menu-bar {
+	border-radius: 25px;
+	height: 35px;
+	display: inline-flex;
+	background-color: rgba(185, 3, 88, 0.6);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	align-items: center;
+	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+}
+
+.menu-bar li {
+	list-style: none;
+	color: white;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 12px 16px;
+	margin: 0 8px;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.menu-bar li:before {
+	content: " ";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	transition: .2s;
+	border-radius: 25px;
+}
+
+.menu-bar li:hover {
+	color: black;
+	background: linear-gradient(to bottom, #de1641, #db4f6d);
+	box-shadow: 0px 3px 20px 0px black;
+	transform: scale(1.0);
+	transition: .2s;
+	border-radius: 25px;
+}
+/* Nav Bar CSS Ends */
+
+/* Main Grid */
+body{
+	height:100vh;
+	background:#0a0a2a;
+}
+.container{
+	height:100%;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content:center;
+	align-items:center;
+	flex-wrap: wrap;
+	margin-bottom:25%;
+}
+
+.card{
+	perspective:100px;
+	height:220px;
+	width:320px;
+	position:relative;
+	margin:5px;
+    padding: 10px;
+
+}
+
+.card img{
+	width:100%;
+    border-radius: 0 20px 0 20px;
+	 
+}
+
+.card .back{
+	position: absolute;
+	transform:	rotateX(0deg);
+	backface-visibility: hidden;
+	transition: transform 0.4s infinite-linear;
+    
+}
+
+.card .front{
+	position: absolute;
+	transform: rotateX(180deg);
+	backface-visibility: hidden;
+	transition:transform .4s linear;
+}
+
+.card:hover .back{
+	transform: rotateX(-180deg);
+	cursor: pointer;
+    
+}
+
+.card:hover .front{
+	transform: rotateX(0deg);
+	cursor: pointer;
+}
