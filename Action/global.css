@@ -11,10 +11,14 @@ html{
 	justify-content: center;
 	margin: auto;
 }
+summary{
+	text-align: center;
+}
 summary:hover{
     text-decoration: underline;
     text-shadow: 1px 1px 1px 1px rgb(255, 255, 255);
     font-size: 17px;
+    
 }
 #navbar span {
 	position: fixed;
