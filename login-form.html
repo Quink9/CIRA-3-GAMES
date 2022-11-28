@@ -107,7 +107,7 @@
     function hello(){
       var email=document.getElementById("email");
       var pass=document.getElementById("psw");
-      if(email.value.length==0 && pass.value.length==0){
+      if(email.value.length==0 || pass.value.length==0){
         alert("Please enter email id and password!");
         return false;
       }
