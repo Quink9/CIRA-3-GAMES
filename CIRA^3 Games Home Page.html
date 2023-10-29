@@ -1,156 +1,202 @@
+<!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <title>CIRA3 Revamped</title>
-        <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-		@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
-		body 
-		{
-			background-color:#262626;
-			margin: 0;
-			display: flex;
-			justify-content: center;
-		}
-	
-		.menu-bar 
-		{
-			border-radius: 25px;
-			height: 35px;
-			display: inline-flex;
-			background-color: rgba(185, 3, 88, 0.6);
-			-webkit-backdrop-filter: blur(10px);
-			backdrop-filter: blur(10px);  
-			align-items: center;
-			padding: 0px 0px 0px 0px;
-			margin: 30px 0 0 0;
-		}
-		.menu-bar li
-		{
-			list-style: none;
-			color: white;
-			font-family: sans-serif;
-			font-weight: bold;
-			padding: 12px 16px;
-			margin: 0 8px;
-			position: relative;
-			cursor: pointer;
-			white-space: nowrap;
-			border-radius: 25px;
-		}
-		.menu-bar li:before 
-		{
-			content: " ";
-			position: absolute;
-			top: 0;
-			left:0;
-			height:100%;
-			width: 100%;
-			z-index:-1;
-			transition: 0.25s;
-			border-radius: 25px;
-		}
-		.menu-bar li:hover 
-		{
-			color: black;
-			background: linear-gradient(to bottom, #de1641, #db4f6d);
-			box-shadow: 0px 3px 20px 0px black;
-			transform: scale(1.05);
-			transition: 0.25s;
-			border-radius: 25px;
-		}
-		.frontimg
+<head>
+    <title>CIRA3 Revamped</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+        body {
+            background-color: #303030;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .menu-bar {
+            border-radius: 25px;
+            height: 35px;
+            display: inline-flex;
+            background-color: rgba(185, 3, 88, 0.6);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            align-items: center;
+            padding: 0px 0px 0px 0px;
+            margin: 30px 0 0 0;
+            z-index: 2;
+        }
+
+        .menu-bar li {
+            list-style: none;
+            color: white;
+            font-family: sans-serif;
+            font-weight: bold;
+            padding: 12px 16px;
+            margin: 0 8px;
+            position: relative;
+            cursor: pointer;
+            white-space: nowrap;
+            border-radius: 25px;
+        }
+
+        .menu-bar li:before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            transition: 0.25s;
+            border-radius: 25px;
+        }
+
+        .menu-bar li:hover {
+            color: black;
+            background: linear-gradient(to bottom, #de1641, #db4f6d);
+            box-shadow: 0px 3px 20px 0px black;
+            transform: scale(1.05);
+            transition: 0.25s;
+            border-radius: 25px;
+        }
+
+        .imgbox {
+            margin: 155px 1em auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-height: 50%;
+            max-width: 80%;
+            position: absolute;
+            z-index: 1;
+            border-radius: 20px;
+        }
+
+        .imgbox img 
         {
-			margin:1em auto;
-			left:0px;
-			right:0px;
-			max-width:100%;
-			max-height:95%;
-			object-fit:cover;
-			overflow:hidden;
-            z-index:-10;
-            position:absolute;
-			border-radius:25px;
-			/* animation:fadeInAnimation ease 15s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards; */
-			box-shadow: 0px 3px 20px 0px black;
+            max-height: 100%;
+            max-width: 100%;
+            border-radius: 40px;
+            animation: fadeInAnimation ease 10s;
+            box-shadow: 0px 3px 20px 0px black;
         }
-		#reservefrontimgbutton
-		{
-			color:black;
-			background-color:white;
-			padding:8px 27px 7px 27px;
-			text-decoration-line:none;
-			font-family:Quicksand;
-			font-size:20px;
-			font-weight:bold;
-			border-style:none;
-			border-radius:25px;
-			transition-duration:0.8s;
-			margin-right:100px;
-			position:absolute;
-			top:533px;
-			left:280px;
-			right:650px;
-		}
-		#reservefrontimgbutton:hover
-		{
-			color:black;
-			background-color:pink;
-			padding:8px 27px 7px 27px;
-			cursor:pointer;
-			text-decoration-line:none;
-			font-family:Quicksand;
-			font-size:20px;
-			font-weight:bold;
-			border-style:none;
-			border-radius:5px;
-			transition-duration:0.8s;
-			margin-right:100px;
-			position:absolute;
-			top:533px;
-			left:280px;
-			right:650px;
-		}
-		.frontimg, #reservefrontimgbutton, .menu-bar
-		{
-			animation:fadeInAnimation ease 10s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-		@keyframes fadeInAnimation 
-		{
-        0% 
-		{
-            opacity: 0;
+
+        #img1
+        {
+            animation: xfade 15s 0s infinite;
+            animation-timing-function: ease-in-out;
         }
-        100% 
-		{
-            opacity: 1;
+
+        #img2
+        {
+            animation: xfade 15s -5s infinite;
+            animation-timing-function: ease-in-out;
+        }       
+
+        #img3
+        {
+            animation: xfade 15s -10s infinite;
+            animation-timing-function: ease-in-out;
         }
-		.container
-		{
-			margin:0;
-			position:relative;
-			margin-top:50%;
-		}
-	</style>
-    </head>
-    <body>
-		<ul class="menu-bar">
-			<img src="https://raw.githubusercontent.com/Quink9/CIRA-3-GAMES/main/logo.webp" width="240px" height="35px" style="box-shadow: 0px 3px 20px 0px black; border-radius:25px">
-			<li><a href="CIRA^3 Games Home Page.html" style="text-decoration:none; color:white">Home</a></li>
-			<li><a href="Sample-Categories-Design.html" style="text-decoration:none; color:white">Categories</a></li>
-			<li><a href="shop_cat.html" style="text-decoration:none; color:white">Shop Now</a></li>
-			<li><a href="about.html" style="text-decoration:none; color:white">About Us</a></li>
-			<li><a href="login-form.html" style="text-decoration:none; color:white">Login</a></li>
-		</ul>
-		<div class="container">
-            <div id="timer_div"><img src="https://raw.githubusercontent.com/Quink9/CIRA-3-GAMES/main/assassins-creed-mirage-hd_1920x1080.jpg" class="frontimg"></div>
-			<div id="button">
-				<a href="rpg.html" style="text-decoration:none; color:white"><button id="reservefrontimgbutton">Purchase The Adventure Now</button></a>			
-			</div>
-		</div>
-	</body>
+
+        #reservefrontimgbutton {
+            animation: fadeInAnimation ease 10s;
+            color: black;
+            background-color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-family: Quicksand;
+            font-size: 3.5vmin;
+            font-weight: bold;
+            border-style: none;
+            border-radius: 25px;
+            transition-duration: 0.8s;
+            position: absolute;
+            z-index: 3;
+            margin: 34% -32%;
+        }
+
+        #reservefrontimgbutton:hover {
+            color: black;
+            background-color: rgb(70, 187, 255);
+            padding: 8px 16px;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: Quicksand;
+            font-size: 3.8vmin;
+            font-weight: bold;
+            border-style: none;
+            border-radius: 5px;
+            transition-duration: 0.8s;
+        }
+
+        @keyframes xfade
+        {
+            0% {opacity: 0;}
+            20% {opacity: 1;}
+            33% {opacity: 1;}
+            53% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+
+        .menu-bar{
+            animation: fadeInAnimation ease 10s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .dot 
+        {
+            height: 15px;
+            width: 15px;
+            margin: 500px 350px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute;
+            z-index: 1;
+            transition: background-color 0.6s ease;
+            border-color: #303030;
+            animation: dotAnimation 5s infinite;
+            animation-delay: 0s, 2s, 4s;
+        }
+
+        @keyframes dotAnimation 
+        {
+            0%, 100% { background-color: #bbb; }
+            33.33% { background-color: #555; }
+            66.66% { background-color: #bbb; }
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu-bar">
+        <img src="https://raw.githubusercontent.com/Quink9/CIRA-3-GAMES/main/logo.webp" width="240px" height="35px" style="box-shadow: 0px 3px 20px 0px black; border-radius: 25px">
+        <li><a href="CIRA^3 Games Home Page.html" style="text-decoration: none; color: white">Home</a></li>
+        <li><a href="Sample-Categories-Design.html" style="text-decoration: none; color: white">Categories</a></li>
+        <li><a href="shop_cat.html" style="text-decoration: none; color: white">Shop Now</a></li>
+        <li><a href="about.html" style="text-decoration: none; color: white">About Us</a></li>
+        <li><a href="login-form.html" style="text-decoration: none; color: white">Login</a></li>
+    </ul>
+    <div id="img1" class="imgbox"><img src="https://raw.githubusercontent.com/Quink9/CIRA-3-GAMES/main/assassins-creed-mirage-hd_1920x1080.jpg"></div>
+    <div id="img2" class="imgbox"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202307/2605/7b70e463bf05b20fbf99f8bf81956aa805969da98d9dcde8.jpg"></div>
+    <div id="img3" class="imgbox"><img src="https://images4.alphacoders.com/131/1318034.jpeg"></div>
+    <a href="rpg.html" style="text-decoration: none; color: white"><button id="reservefrontimgbutton">Purchase The Adventure Now</button></a>
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
+</body>
 </html>
