@@ -74,8 +74,7 @@
             border-radius: 20px;
         }
 
-        .imgbox img 
-        {
+        .imgbox img {
             max-height: 100%;
             max-width: 100%;
             border-radius: 40px;
@@ -83,20 +82,17 @@
             box-shadow: 0px 3px 20px 0px black;
         }
 
-        #img1
-        {
+        #img1 {
             animation: xfade 15s 0s infinite;
             animation-timing-function: ease-in-out;
         }
 
-        #img2
-        {
+        #img2 {
             animation: xfade 15s -5s infinite;
             animation-timing-function: ease-in-out;
-        }       
+        }
 
-        #img3
-        {
+        #img3 {
             animation: xfade 15s -10s infinite;
             animation-timing-function: ease-in-out;
         }
@@ -132,16 +128,25 @@
             transition-duration: 0.8s;
         }
 
-        @keyframes xfade
-        {
-            0% {opacity: 0;}
-            20% {opacity: 1;}
-            33% {opacity: 1;}
-            53% {opacity: 0;}
-            100% {opacity: 0;}
+        @keyframes xfade {
+            0% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            33% {
+                opacity: 1;
+            }
+            53% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
         }
 
-        .menu-bar{
+        .menu-bar {
             animation: fadeInAnimation ease 10s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
@@ -156,27 +161,62 @@
             }
         }
 
-        .dot 
-        {
+        .dot-container {
+            text-align: center;
+            margin: 480px 0px 0px 912px;
+            z-index: 3;
+            position: relative;
+        }
+
+        .dot-container::before {
+            content: "";
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85px;
+            height: 33px;
+            background: rgba(1, 27, 82, 0.336);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .dot {
             height: 15px;
             width: 15px;
-            margin: 500px 350px;
+            margin: 0 5px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
-            position: absolute;
-            z-index: 1;
             transition: background-color 0.6s ease;
-            border-color: #303030;
-            animation: dotAnimation 5s infinite;
-            animation-delay: 0s, 2s, 4s;
         }
 
-        @keyframes dotAnimation 
-        {
-            0%, 100% { background-color: #bbb; }
-            33.33% { background-color: #555; }
-            66.66% { background-color: #bbb; }
+        .dot.active {
+            background-color: #555;
+        }
+
+        @keyframes dotAnimation {
+            0%, 100% {
+                background-color: #bbb;
+            }
+            33.33% {
+                background-color: #555;
+            }
+            66.66% {
+                background-color: #bbb;
+            }
+        }
+
+        .dot:nth-child(1) {
+            animation: dotAnimation 5s infinite 0s;
+        }
+
+        .dot:nth-child(2) {
+            animation: dotAnimation 5s infinite 2.5s;
+        }
+
+        .dot:nth-child(3) {
+            animation: dotAnimation 5s infinite 5s;
         }
     </style>
 </head>
@@ -193,10 +233,10 @@
     <div id="img2" class="imgbox"><img src="https://image.api.playstation.com/vulcan/ap/rnd/202307/2605/7b70e463bf05b20fbf99f8bf81956aa805969da98d9dcde8.jpg"></div>
     <div id="img3" class="imgbox"><img src="https://images4.alphacoders.com/131/1318034.jpeg"></div>
     <a href="rpg.html" style="text-decoration: none; color: white"><button id="reservefrontimgbutton">Purchase The Adventure Now</button></a>
-    <div style="text-align:center">
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span> 
+    <div class="dot-container">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
 </body>
 </html>
