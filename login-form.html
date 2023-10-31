@@ -11,15 +11,62 @@
 <style>
   body
   {
-    background-image:url("https://media.istockphoto.com/id/944880340/photo/chaotic-black-low-poly-surface-abstract-3d-render.jpg?b=1&s=170667a&w=0&k=20&c=_zTTb5QQqP9yjC1WYh1pzolYb70MEE11rVm23rxBDgo=");
+    background-image:url("https://wallpaperaccess.com/full/3358359.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+   
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
   }
-  .login-btn:hover{
-    cursor: pointer;
+
+  .login-form 
+  {
+    text-align: center;
+    backdrop-filter: blur(10px);
+    background: rgba(121, 41, 226, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1.2px;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slideIn 0.5s ease-in-out 0.5s forwards, fadeIn 0.5s ease-in-out 0.5s forwards;
+  }
+
+  @keyframes slideIn 
+  {
+    from {
+      transform: translateY(-50px);
     }
-  #psw, #email{
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn 
+  {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .login-btn:hover
+  {
+    cursor: pointer;
+  }
+
+  #psw, #email
+  {
     border: none;
     border-radius:5px;
     padding:5px 10px;
@@ -28,12 +75,15 @@
     color:black;
     font-weight:strong;
   }
+
   #email
   {
     width:250px;
   }
+
   .login-btn
   {
+    font-family:Quicksand;
     border-style:solid;
     border-width:1.5px;
     border-radius:25px;
@@ -43,8 +93,10 @@
     font-size:13px;
     transition-duration:0.5s;
   }
+
   .login-btn:hover
   {
+    font-family:Quicksand;
     border-style:solid;
     border-width:1.5px;
     border-radius:5px;
@@ -53,33 +105,50 @@
     color:black;
     transition-duration:0.5s;
   }
-  #fb{
+
+  #fb
+  {
     color: #0658ff;
-    /* color: #1877f2; */
   }
-  #tw{
+
+  #tw
+  {
     color: #1da1f2;
   }
-  #ig{
+
+  #ig
+  {
     color: #ff03d0;
   }
-  #gg{
-    /* color: #e94235; */
-    /* font-size: 72px; */
-  background: -webkit-linear-gradient(#e94235, #fabb05, #4285f4, #34a853);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+  #gg
+  {
+    background: -webkit-linear-gradient(#e94235, #fabb05, #4285f4, #34a853);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  #myButton{
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(152,187,228,1) 100%);
+  #myButton
+  {
+    font-family:Quicksand;
+    font-weight: 400;
+    background: rgb(238,174,202);
+    border-radius: 20px;
+    border-style: none;
+    padding:5px 10px;
+    transition-duration:0.5s;
   }
 
-  #myButton:hover{
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 0.1% 0.5%;
+  #myButton:hover
+  {
+    font-family:Quicksand;
+    font-weight: 400;
+    background: rgb(250, 246, 248);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition-duration:0.5s;
   }
 </style>
 </head>
@@ -103,13 +172,9 @@
       <p>Sign in with your social media account</p>
       <!-- Social login buttons -->
       <div class="social-icon">
-	  
         <a href="3B5998" button type="button"><i class="fa fa-facebook" id="fb"></i></button></a>
-
         <a href="55ACEE" button type="button"><i class="fa fa-twitter" id="tw"></i></button></a>
-
 		    <a href="125688" button type="button"><i class='fa fa-instagram' id="ig"></i></button></a>
-        
 		    <a href="dd4b39" button type="button"><i class='fa fa-google' id="gg"></i></button></a>
       </div>
       <br>
@@ -125,7 +190,7 @@
         return false;
       }
       else{
-        alert("Hello, "+email.value);
+        alert("Welcome, "+email.value);
         return true;
       }
     }
