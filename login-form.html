@@ -14,7 +14,6 @@
     background-image:url("https://wallpaperaccess.com/full/3358359.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-   
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     color:white;
@@ -106,7 +105,8 @@
     transition-duration:0.5s;
   }
 
-  #fb
+
+  /*#fb
   {
     color: #0658ff;
   }
@@ -127,6 +127,28 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }*/
+
+
+  #signupbttn
+  {
+    
+    font-family:Quicksand;
+    border-radius: 10px;
+    border-style: none;
+    color:black;
+    background-color: none;
+    transition-duration: 0.7s;
+  }
+
+  #signupbttn:hover
+  {
+    font-family:Quicksand;
+    border-radius: 2px;
+    cursor: pointer;
+    color:black;
+    background-color: none;
+    transition-duration: 0.7s;
   }
 
   #myButton
@@ -169,14 +191,16 @@
       </div>  <br>    
 	    <button class="login-btn">Login</button>   
       <div class="seperator"><b>or</b></div>
-      <p>Sign in with your social media account</p>
+      <p>Don't have an account? <a href="#"><button type="button" id="signupbttn">Sign Up Here</button></a></p>
+
       <!-- Social login buttons -->
-      <div class="social-icon">
+      <!--<div class="social-icon">
         <a href="3B5998" button type="button"><i class="fa fa-facebook" id="fb"></i></button></a>
         <a href="55ACEE" button type="button"><i class="fa fa-twitter" id="tw"></i></button></a>
 		    <a href="125688" button type="button"><i class='fa fa-instagram' id="ig"></i></button></a>
 		    <a href="dd4b39" button type="button"><i class='fa fa-google' id="gg"></i></button></a>
-      </div>
+      </div>-->
+
       <br>
       <button type="button" id="myButton" onclick="return homepage()">Homepage</button>
     </form>
