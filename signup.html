@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CIRA^3 Games SignUp Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        * 
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            font-family: Quicksand, sans-serif;
+        }
+
+        body
+        {
+            background-image:url("https://wallpaperaccess.com/full/3358359.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        html 
+        {
+            font-size: 62.5%;
+        }
+
+        .container 
+        {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideAndFade 1s ease-in-out 0.5s;
+        }
+
+        @keyframes slideAndFade 
+        {
+            0%
+            {
+                transform: translateY(-10%);
+                opacity: 0;
+            }
+            100% 
+            {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .form-wrapper 
+        {
+            width: 80rem;
+            height: 60rem;
+            background-color: #eee;
+            border-radius: 3rem;
+            box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner 
+        {
+            position: absolute;
+            top: 25%;
+            left: 25rem;
+            text-align: center;
+            color: #fff;
+            width: 30rem;
+            z-index: 100;
+            transition: left 0.8s;
+        }
+
+        .container.change .banner 
+        {
+            left: 0rem;
+        }
+
+        .banner h1 
+        {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .banner p 
+        {
+            font-size: 2rem;
+            text-align: center;
+            margin-left:5%;
+            transition: margin-left 0.8s;
+        }
+
+        .container.change .banner p 
+        {
+            margin-left: 1rem;
+        }
+
+        .gradient-bg 
+        {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right,#0d7eca, #41b2fd);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .container.change .gradient-bg 
+        {
+            width: 40%;
+        }
+
+        .gradient-bg button 
+        {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16rem;
+            height: 5rem;
+            background-color: transparent;
+            border: 0.1rem solid #fff;
+            border-radius: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .signup-form 
+        {
+            width: 40rem;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 5rem 2rem;
+            transition: left 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .container.change .signup-form 
+        {
+            left: 40rem;
+        }
+
+        .signup-form h1 
+        {
+            font-size: 4rem;
+            color: #0d7eca;
+        }
+
+        .social-media 
+        {
+            display: flex;
+        }
+
+        .social-media i 
+        {
+            width: 4rem;
+            height: 4rem;
+            border: 0.1rem solid #777;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 2rem;
+            font-size: 2rem;
+            color: #555;
+            background: #fff;
+            transition: background 0.1s ease-in-out;
+            &:hover 
+            {
+                background: linear-gradient(to right, #1598f0, #8ed2ff);
+            }
+        }
+
+        .signup-form p 
+        {
+            font-size: 1.8rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .input-group 
+        {
+            position: relative;
+        }
+
+        .input-group input 
+        {
+            width: 28rem;
+            height: 5rem;
+            padding: 1rem 1rem 1rem 3rem;
+            background-color: #ddd;
+            border: none;
+            border-radius: 0.5rem;
+        }
+
+        .input-group i 
+        {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .signup-form button 
+        {
+            width: 16rem;
+            height: 5rem;
+            background-color: #0d7eca;
+            border: none;
+            border-radius: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: #fff;
+            margin-top: 3rem;
+            cursor: pointer;
+        }
+    </style>    
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="banner">
+          <h1>Hello, User!</h1>
+          <p>Enter your personal details to get started with CIRA^3 Games</p>
+        </div>
+        <div class="gradient-bg">
+          <button type="button">Sign Up</button>
+        </div>
+        <form class="signup-form">
+          <h1>Create Account</h1>
+          <div class="social-media">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-google"></i>
+          </div>
+          <p>or use your email for registration</p>
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Name" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <button type="button">Sign Up</button>
+          <p>Already have an account? <a href="login-form.html" style="text-decoration: none; color:#0d7eca">Login</a></p>
+        </form>
+      </div>
+    </div>
+    <script>
+        const container = document.querySelector(".container");
+        const signUpBtn = document.querySelector(".gradient-bg button");
+        signUpBtn.addEventListener("click", () => {container.classList.toggle("change");});
+    </script>
+  </body>
+</html>
