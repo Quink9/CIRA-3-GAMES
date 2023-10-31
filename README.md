@@ -2,7 +2,7 @@
 
 Change-log v1.0.3
 
--Sign up page has now been added.
+-Sign up page has now been added.<br>
 -Added slide-in and fade-in animation to sign-up form container.
 -Sign in page has now been linked to the login page.
 
