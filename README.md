@@ -1,5 +1,8 @@
 # CIRA^3-GAMES Minor Project Official Github Repository
-
+# Important Announcement #
+>> "This is a private repository. Copying or redistributing materials from this repository may infringe on copyright laws."
+>> Please contact adminstrator in case of copying
+# End of Announcement #
 Change-log v1.0.3
 
 -Sign up page has now been added.<br>
