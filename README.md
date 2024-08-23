@@ -3,6 +3,8 @@
 >> "This is a private repository. Copying or redistributing materials from this repository may infringe on copyright laws."
 >> Please contact adminstrator in case of copying
 # End of Announcement #
+
+# Begin of Changelog History #
 Change-log v1.0.3
 
 -Sign up page has now been added.<br>
