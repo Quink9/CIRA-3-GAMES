@@ -1,7 +1,9 @@
 # CIRA^3-GAMES Minor Project Official Github Repository
 # Important Announcement #
->> "This is a private repository. Copying or redistributing materials from this repository may infringe on copyright laws."
->> Please contact adminstrator in case of copying
+>> **This is a private repository.**  
+>> Copying or redistributing materials from this repository may infringe on copyright laws.  
+>> Please contact the administrator if you need permission to copy or redistribute materials.
+
 # End of Announcement #
 
 # Begin of Changelog History #
